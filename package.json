@@ -1,0 +1,51 @@
+{
+  "name": "claude-chat-exporter",
+  "version": "1.0.0",
+  "description": "Chrome extension to export Claude AI chat conversations to PDF and Markdown formats",
+  "main": "dist/content.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anurag-as/claude-chat-exporter.git"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "build:analyze": "webpack --mode production --analyze",
+    "dev": "webpack --mode development --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "size": "npm run build && du -sh dist/* | sort -h",
+    "package": "npm run build && cd dist && zip -r ../claude-chat-exporter.zip ."
+  },
+  "keywords": [
+    "chrome-extension",
+    "claude",
+    "claude-ai",
+    "export",
+    "pdf",
+    "markdown",
+    "chat-export",
+    "conversation-export",
+    "anthropic"
+  ],
+  "author": "Anurag",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chrome": "^0.0.268",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.7",
+    "copy-webpack-plugin": "^13.0.1",
+    "fast-check": "^3.17.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.5",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "highlight.js": "^11.9.0",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.8.2"
+  }
+}
